@@ -1,0 +1,10 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Detalle del Artista</h2>
+<hr></hr>
+<p><h3>Estudiente: {{ artista.name }} {{ artista.last_name }}</h4></p>
+<p><h4>Correo electrónico: {{ artista.email }} - Instrumento {{ artista.instrument }}</h4></p>
+<p><a class="btn2 btn-primary" href="{% url 'student:student-list' %}">Regresar a la lista de artistas</a></p>
+{% endblock %}

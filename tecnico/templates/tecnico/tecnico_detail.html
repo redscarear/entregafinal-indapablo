@@ -1,0 +1,10 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Detalle del Tecnico</h2>
+<hr></hr>
+<p><h3>Estudiente: {{ tecnico.name }} {{ tecnico.last_name }}</h4></p>
+<p><h4>Correo electrónico: {{ tecnico.email }}</h4></p>
+<p><a class="btn2 btn-primary" href="{% url 'tecnico:tecnico-list' %}">Regresar a la lista de Tecnicos</a></p>
+{% endblock %}

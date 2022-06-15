@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Lista de Productores</h2>
+{% if user.is_authenticated %}
+<a class="card_custom" href="{% url 'productor:productor-add' %}">Crear nuevo Productor</a>
+{% endif %}
+<hr></hr>
+<ul>
+    {% for productor in productor_list %}
+    <li>
+        {{productor}}
+        (
+            <a href="{% url 'productor:productor-detail' productor.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        {% if user.is_authenticated %}
+        |
+        <a href="{% url 'productor:productor-update' productor.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'productor:productor-delete' productor.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

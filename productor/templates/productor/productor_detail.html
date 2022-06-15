@@ -1,0 +1,10 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Detalle del Productor</h2>
+<hr></hr>
+<p><h3>Prodcutor: {{ productor.name }} {{ productor.last_name }}</h4></p>
+<p><h4>Correo electrónico: {{ productor.email }}</h4></p>
+<p><a class="btn2 btn-primary" href="{% url 'productor:productor-list' %}">Regresar a la lista de Productores</a></p>
+{% endblock %}

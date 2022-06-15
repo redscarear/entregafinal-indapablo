@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Lista de Artistas</h2>
+{% if user.is_authenticated %}
+<a class="card_custom" href="{% url 'artista:artista-add' %}">Crear nuevo Artista</a>
+{% endif %}
+<hr></hr>
+<ul>
+    {% for artista in artista_list %}
+    <li>
+        {{artista}}
+        (
+            <a href="{% url 'artista:artista-detail' artista.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        {% if user.is_authenticated %}
+        |
+        <a href="{% url 'artista:artista-update' artista.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'artista:artista-delete' artista.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Lista de Tecnicos</h2>
+{% if user.is_authenticated %}
+<a class="card_custom" href="{% url 'arttecnicoista:tecnico-add' %}">Crear nuevo Tecnico</a>
+{% endif %}
+<hr></hr>
+<ul>
+    {% for tecnico in tecnico_list %}
+    <li>
+        {{tecnico}}
+        (
+            <a href="{% url 'tecnico:tecnico-detail' tecnico.id %}">
+                <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
+            </a>
+        {% if user.is_authenticated %}
+        |
+        <a href="{% url 'tecnico:tecnico-update' tecnico.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>
+        </a>
+        |
+        <a href="{% url 'tecnico:tecnico-delete' tecnico.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"> </i>
+        </a>
+        {% endif %}
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

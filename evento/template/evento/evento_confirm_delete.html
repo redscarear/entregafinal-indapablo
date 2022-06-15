@@ -1,0 +1,16 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Eliminar Evento</h2>
+<hr></hr>
+
+<p>Estás seguro de eliminar el Evento: {{ evento.name }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input class="btn2 btn-warning" type="submit" value="Si, eliminar.">
+    <a class="btn2 btn-primary" href="{% url 'evento:evento-list' %}" >Cancelar</a>
+</form>
+
+{% endblock %}

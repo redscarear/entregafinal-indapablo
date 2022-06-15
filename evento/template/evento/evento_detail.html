@@ -1,0 +1,13 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block entregafinal_content %}
+
+<h2>Detalle del Evento</h2>
+<hr></hr>
+<p><h3>Evento: {{ evento.name }}</h3></p>
+<p><h4>Codigo: {{ evento.code }}</h4></p>
+<p><h4>Fecha: {{ evento.due_date }}</h4></p>
+<h4>Descripción:</h4>
+<p><textarea readonly rows="7" cols="90" >{{ evento.description }}</textarea></p>
+<p><a class="btn2 btn-primary" href="{% url 'evento:evento-list' %}">Regresar a la lista de eventos</a></p>
+{% endblock %}
