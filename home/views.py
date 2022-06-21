@@ -45,3 +45,6 @@ def search(request):
         template_name="home/main.html",
     )
 
+def about(request):
+    return render(request=request,
+    template_name="home/about.html")
