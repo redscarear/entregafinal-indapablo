@@ -15,19 +15,19 @@ class EventoListView(ListView):
 class EventoDetailView(DetailView):
     model = Evento
     template_name = "evento/evento_detail.html"
-    fields = ['name', 'code', 'description']
+    fields = ['name', 'code', 'description', 'due_date']
 
 
 class EventoCreateView(LoginRequiredMixin, CreateView):
     model = Evento
     success_url = reverse_lazy('evento:evento-list')
-    fields = ['name', 'code', 'description']
+    fields = ['name', 'code', 'description', 'due_date']
 
 
 class EventoUpdateView(LoginRequiredMixin, UpdateView):
     model = Evento
     success_url = reverse_lazy('evento:evento-list')
-    fields = ['name', 'code', 'description']
+    fields = ['name', 'code', 'description', 'due_date']
 
 
 class EventoDeleteView(LoginRequiredMixin, DeleteView):
