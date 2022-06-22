@@ -21,7 +21,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
     success_url = reverse_lazy('blog:blog-list')
-    fields = ['title', 'author', 'content']
+    fields = ['title', 'author', 'slug', 'content']
 
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):

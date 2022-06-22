@@ -15,7 +15,7 @@
             <a href="{% url 'blog:blog-detail' blog.id %}">
                 <i class="fa fa-eye" style="color: rgb(0, 0, 255);"> </i>
             </a>
-        {% if blog.author %}
+        {% if blog.author_id == user.id %}
         |
         <a href="{% url 'blog:blog-update' blog.id %}">
             <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"> </i>

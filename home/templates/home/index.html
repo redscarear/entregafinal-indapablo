@@ -46,9 +46,9 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="mb-5">Red para organizacion de eventos <br> Productores Organizados</h1>
-                            {% if messages %}
-                                {% for message in messages %}
-                                <h4><p style="color: rgb(131, 31, 0)" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p></h4>
+                            {% if blog %}
+                                {% for blog in blogs %}
+                                <h4><p style="color: rgb(131, 31, 0)" {% if blog.title %} class="{{ blog.title }}"{% endif %}>{{ blog }}</p></h4>
                                 {% endfor %}
                             {% endif %}
                             <div class="text-lg-start text-white">
@@ -65,6 +65,7 @@
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
+                {{request.user.username}}
                 {% if user.is_superuser %}
                     <h5><p style="color: rgb(0, 20, 131)" >SuperUser</p></h5>
                 {% else %}
