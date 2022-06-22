@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'productor',
     'tecnico',
     'user',
+    'blog',
 ]
 
 MIDDLEWARE = [

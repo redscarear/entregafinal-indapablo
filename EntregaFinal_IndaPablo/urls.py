@@ -25,6 +25,7 @@ urlpatterns = [
     path('productor/', include('productor.urls')),
     path('tecnico/', include('tecnico.urls')),
     path('user/', include('user.urls')),
+    path('blog/', include('blog.urls')),
 ]
 
 if settings.DEBUG:
